@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Filters } from '../components/filters';
-import { Table } from '../components/table';
+import { SerpList } from '../components/serp-list';
 import { setData } from '../ducks/serp/actions';
-import { SerpWrapper } from './styled';
+import { Layout, SerpWrapper } from './styled';
 
 import mockData from '../assets/mock.json';
 
@@ -16,9 +16,11 @@ export const Serp: React.FC = () => {
     }, []);
 
     return (
-        <SerpWrapper>
-            <Filters />
-            <Table />
-        </SerpWrapper>
+        <Layout>
+            <SerpWrapper>
+                <Filters />
+                <SerpList />
+            </SerpWrapper>
+        </Layout>
     );
 };

@@ -1,6 +1,19 @@
 import styled from 'styled-components';
 
+export const Layout = styled.div`
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 export const SerpWrapper = styled.div`
     height: 100%;
     width: 844px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;

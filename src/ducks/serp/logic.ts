@@ -1,17 +1,17 @@
 import { createLogic } from 'redux-logic';
 import { IRootState } from '../types';
 import { setData, setInsuranceOptions, setSpecialtyOptions } from './actions';
-import { Availability, IFilterOptions, ISerpDataPayload } from './types';
+import { IFilterOptions, ISerpDataPayload } from './types';
 
 const setDataLogic = createLogic<IRootState, ISerpDataPayload>({
     type: [setData.type],
     process: ({ action }, dispatch, done) => {
         const items = action.payload.items;
-
-        const availabilityOptions: IFilterOptions = Object.keys(Availability).map((key) => ({
-            option: key,
-            count: 0,
-        }));
+        // Too much work, sorry...
+        // const availabilityOptions: IFilterOptions = Object.keys(Availability).map((key) => ({
+        //     option: key,
+        //     count: 0,
+        // }));
         const specialityOptions: IFilterOptions = [];
         const insuranceOptions: IFilterOptions = [];
 
