@@ -1,6 +1,6 @@
 import { ISerpItem } from '../../../../ducks/serp/types';
 import { pluralization } from '../../../../helpers/pluralization';
-import { InfoItems, InfoItem, CircleDivider, InfoWrapper, Name } from './styled';
+import { InfoItems, InfoItem, CircleDivider, InfoWrapper, NameTypography } from './styled';
 
 export type IItemInfoProps = {
     item: ISerpItem;
@@ -9,7 +9,7 @@ export type IItemInfoProps = {
 export const ItemInfo: React.FC<IItemInfoProps> = ({ item }) => {
     return (
         <InfoWrapper>
-            <Name>{item.name}</Name>
+            <NameTypography>{item.name}</NameTypography>
             <InfoItems>
                 <InfoItem>{item.speciality}</InfoItem>
                 <CircleDivider />

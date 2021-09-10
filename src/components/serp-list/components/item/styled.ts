@@ -35,7 +35,7 @@ export const PriceWrapper = styled.div`
 `;
 
 // It should be in Typography
-export const Name = styled.h3`
+export const NameTypography = styled.h3`
     font-size: 22px;
     line-height: 32px;
     weight: 600;

@@ -6,6 +6,6 @@ import { rootLogic } from './root-logic';
 
 export const store = configureStore({
     reducer: rootReducer,
-    middleware: [createLogicMiddleware<IRootState>(rootLogic as any)],
+    middleware: [createLogicMiddleware<IRootState>(rootLogic as never)],
     devTools: process.env.NODE_ENV !== 'production',
 });
