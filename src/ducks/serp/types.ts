@@ -52,6 +52,6 @@ export type ISerpFilters = {
 };
 
 export type ISerpState = {
-    data?: ISerpItem[];
+    data: ISerpItem[];
     filters: ISerpFilters;
 };

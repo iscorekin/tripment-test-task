@@ -12,6 +12,7 @@ export const Layout = styled.div`
 export const SerpWrapper = styled.div`
     height: 100%;
     width: 844px;
+    margin-top: 24px;
 
     display: flex;
     flex-direction: column;

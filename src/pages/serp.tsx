@@ -7,6 +7,7 @@ import { SerpHeader } from '../components/serp-header';
 import { Layout, SerpWrapper } from './styled';
 
 import mockData from '../assets/mock.json';
+import { LineDivider } from '../components/ui';
 
 export const Serp: React.FC = () => {
     const dispatch = useDispatch();
@@ -19,6 +20,7 @@ export const Serp: React.FC = () => {
     return (
         <Layout>
             <SerpWrapper>
+                <LineDivider />
                 <Filters />
                 {/* Of course we should use only price and city in title's props, then concatenate them */}
                 <SerpHeader

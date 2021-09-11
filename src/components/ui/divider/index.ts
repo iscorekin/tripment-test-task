@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const LineDivider = styled.div`
     width: 100%;
-    border: 1px solid #eaeeee;
+    border-bottom: 1px solid #eaeeee;
 `;
 
 export const CircleDivider = styled.div<{ color?: string }>`

@@ -3,6 +3,7 @@ import { IFilterOptions } from '../../../ducks/serp/types';
 import { Button, CancelButton, Checkbox, CircleDivider, Input } from '..';
 import { useComponentVisible } from '../../../hooks';
 import {
+    CheckboxCounter,
     CheckboxDropdownCheckboxes,
     CheckboxDropdownContainer,
     CheckboxDropdownContent,
@@ -98,7 +99,7 @@ export const CheckboxDropdown: React.FC<ICheckboxDropdownProps> = (props) => {
                                         key={option.option}
                                         onChange={handleCheckboxChecked}
                                     >
-                                        {option.option} ({option.count})
+                                        {option.option} <CheckboxCounter>({option.count})</CheckboxCounter>
                                     </Checkbox>
                                 );
                             })}

@@ -9,6 +9,7 @@ export const setSpecialtyOptions = createAction<IFilterOptions>('SERP/SET_SPECIA
 export const setInsurance = createAction<string[]>('SERP/SET_INSURANCE');
 export const setInsuranceOptions = createAction<IFilterOptions>('SERP/SET_INSURANCE_OPTIONS');
 export const setSort = createAction<SerpSort>('SERP/SET_SORT');
+export const clearFilters = createAction<undefined>('SERP/CLEAR_FILTERS');
 
 // Data
 export const setData = createAction<ISerpDataPayload>('SERP/SET_DATA');

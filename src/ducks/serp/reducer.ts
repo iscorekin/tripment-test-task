@@ -1,5 +1,7 @@
 import { createReducer, PayloadAction } from '@reduxjs/toolkit';
+import { stat } from 'fs';
 import {
+    clearFilters,
     setAvailability,
     setAvailabilityOptions,
     setData,
@@ -45,6 +47,11 @@ export const serpReducer = createReducer<ISerpState>(initialState, {
     },
     [setSort.type]: (state: ISerpState, action: PayloadAction<SerpSort>) => {
         state.filters.sort = action.payload;
+    },
+    [clearFilters.type]: (state: ISerpState) => {
+        state.filters.availability = [];
+        state.filters.insurance = [];
+        state.filters.speciality = [];
     },
     [setData.type]: (state: ISerpState, action: PayloadAction<ISerpDataPayload>) => {
         state.data = action.payload.items;

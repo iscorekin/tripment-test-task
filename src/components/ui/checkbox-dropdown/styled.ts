@@ -112,3 +112,7 @@ export const CheckboxDropdownPlaceholder = styled.div`
     align-items: center;
     gap: 4px;
 `;
+
+export const CheckboxCounter = styled.span`
+    color: #91a5a7;
+`;
