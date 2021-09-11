@@ -1,6 +1,6 @@
 import { ChangeEventHandler, useEffect, useState } from 'react';
 import { IFilterOptions } from '../../../ducks/serp/types';
-import { Button, CancelButton, Checkbox, Input } from '..';
+import { Button, CancelButton, Checkbox, CircleDivider, Input } from '..';
 import { useComponentVisible } from '../../../hooks';
 import {
     CheckboxDropdownCheckboxes,
@@ -9,10 +9,12 @@ import {
     CheckboxDropdownFooter,
     CheckboxDropdownHeader,
     CheckboxDropdownIcon,
+    CheckboxDropdownPlaceholder,
     CheckboxDropdownWindow,
 } from './styled';
 
 import { ArrowIcon } from './arrow-icon';
+import { CloseIcon } from './close-icon';
 
 export type ICheckboxDropdownProps = {
     options: IFilterOptions;
@@ -62,12 +64,25 @@ export const CheckboxDropdown: React.FC<ICheckboxDropdownProps> = (props) => {
 
     const handleHeaderClick = () => setIsComponentVisible(!isComponentVisible);
 
+    const handleCloseIconClick: React.MouseEventHandler<SVGSVGElement> = (e) => {
+        e.stopPropagation();
+        onReset();
+    };
+
+    const handleResetClick = () => {
+        setBuffer([]);
+    };
+
     return (
         <CheckboxDropdownContainer ref={ref}>
             <CheckboxDropdownHeader opened={isComponentVisible} onClick={handleHeaderClick}>
-                {placeholder}
-                <CheckboxDropdownIcon opened={isComponentVisible}>
-                    <ArrowIcon />
+                <CheckboxDropdownPlaceholder>
+                    <span>{values.length === 1 ? values[0] : placeholder}</span>
+                    <CircleDivider color={isComponentVisible ? 'white' : undefined} />
+                    {values.length > 1 && <span>{values.length}</span>}
+                </CheckboxDropdownPlaceholder>
+                <CheckboxDropdownIcon opened={isComponentVisible} values={!!values.length}>
+                    {values.length ? <CloseIcon onClick={handleCloseIconClick} /> : <ArrowIcon />}
                 </CheckboxDropdownIcon>
             </CheckboxDropdownHeader>
             {isComponentVisible && (
@@ -90,7 +105,7 @@ export const CheckboxDropdown: React.FC<ICheckboxDropdownProps> = (props) => {
                         </CheckboxDropdownCheckboxes>
                     </CheckboxDropdownContent>
                     <CheckboxDropdownFooter>
-                        <CancelButton onClick={onReset}>Reset</CancelButton>
+                        <CancelButton onClick={handleResetClick}>Reset</CancelButton>
                         <Button onClick={handleApply}>Apply</Button>
                     </CheckboxDropdownFooter>
                 </CheckboxDropdownWindow>

@@ -3,6 +3,7 @@ import { typography } from '../typography';
 
 export type IOpenedProps = {
     opened: boolean;
+    values?: boolean;
 };
 
 export const CheckboxDropdownContainer = styled.div``;
@@ -38,6 +39,7 @@ export const CheckboxDropdownHeader = styled.div<IOpenedProps>`
 export const CheckboxDropdownIcon = styled.div<IOpenedProps>`
     width: 24px;
     height: 24px;
+    display: flex;
 
     ${({ opened }) =>
         opened &&
@@ -46,6 +48,15 @@ export const CheckboxDropdownIcon = styled.div<IOpenedProps>`
             > svg > path {
                 fill: white;
             }
+        `}
+
+    ${({ values }) =>
+        values &&
+        css`
+            width: 12px;
+            height: 12px;
+
+            cursor: pointer;
         `}
 `;
 
@@ -94,4 +105,10 @@ export const CheckboxDropdownFooter = styled.div`
     padding: 8px 16px;
     z-index: 1;
     box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.04);
+`;
+
+export const CheckboxDropdownPlaceholder = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 4px;
 `;
