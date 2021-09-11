@@ -1,6 +1,7 @@
 import { ISerpItem } from '../../../../ducks/serp/types';
 import { pluralization } from '../../../../helpers/pluralization';
-import { InfoItems, InfoItem, CircleDivider, InfoWrapper, NameTypography } from './styled';
+import { CircleDivider } from '../../../ui';
+import { InfoItems, InfoItem, InfoWrapper, NameTypography } from './styled';
 
 export type IItemInfoProps = {
     item: ISerpItem;

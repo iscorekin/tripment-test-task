@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { typography } from '../../../ui/typography';
 
 export const ItemWrapper = styled.div`
     border-bottom: 1px solid #eaeeee;
@@ -34,12 +35,8 @@ export const PriceWrapper = styled.div`
     margin-left: auto;
 `;
 
-// It should be in Typography
 export const NameTypography = styled.h3`
-    font-size: 22px;
-    line-height: 32px;
-    weight: 600;
-    letter-spacing: -0.3px;
+    ${typography('h3')}
 `;
 
 export const InfoItems = styled.div`
@@ -48,41 +45,17 @@ export const InfoItems = styled.div`
     gap: 8px;
 `;
 
-export const CircleDivider = styled.div<{ color?: string }>`
-    width: 4px;
-    height: 4px;
-    border-radius: 100%;
-    background-color: ${({ color }) => color || '#244D51'};
-
-    :first-child {
-        display: none;
-    }
-
-    :last-child {
-        display: none;
-    }
-`;
-
 export const InfoItem = styled.p<{ color?: string }>`
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.3px;
+    ${typography('p')}
     color: ${({ color }) => color || '#244D51'};
 `;
 
 export const Caption = styled.p`
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: -0.3px;
-    border-bottom: 1px dashed #244d51;
-    color: #244d51;
+    ${typography('caption')};
 `;
 
 export const Price = styled.h4`
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 26px;
-    letter-spacing: -0.3px;
+    ${typography('h4')}
 `;
 
 export const LikeWrapper = styled.img`

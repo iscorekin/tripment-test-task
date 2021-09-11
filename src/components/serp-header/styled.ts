@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { typography } from '../ui/typography';
 
 export const SerpHeaderWrapper = styled.div`
     width: 100%;
@@ -9,14 +10,10 @@ export const SerpHeaderWrapper = styled.div`
     gap: 16px;
 `;
 
-// It should be in Typography
 export const TitleTypography = styled.h2`
     font-weight: 800;
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -0.3px;
 
-    color: #244d51;
+    ${typography('h2')}
 `;
 
 export const CaptionIcon = styled.img`
@@ -31,10 +28,6 @@ export const CaptionWrapper = styled.div`
     gap: 4px;
 `;
 
-// It should be in Typography
 export const CaptionTypography = styled.p`
-    font-size: 16px;
-    line-height: 24px;
-
-    letter-spacing: -0.3px;
+    ${typography('p')}
 `;

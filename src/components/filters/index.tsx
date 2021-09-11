@@ -1,5 +1,10 @@
-import { Wrapper } from './styled';
+import { SpecialityFilter } from './speciality-filter';
+import { FiltersWrapper } from './styled';
 
 export const Filters: React.FC = () => {
-    return <Wrapper>filters</Wrapper>;
+    return (
+        <FiltersWrapper>
+            <SpecialityFilter />
+        </FiltersWrapper>
+    );
 };
